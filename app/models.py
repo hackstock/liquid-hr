@@ -20,6 +20,7 @@ class User(BaseModel):
     is_enabled = db.Column(db.Boolean, nullable=True, default=True)
     is_admin = db.Column(db.Boolean, nullable=False, default=False)
     last_login_at = db.Column(db.DateTime, nullable=True)
+    profile = db.relationship('Profile', backref='user', uselist=False)
 
     @property
     def password(self):
@@ -43,4 +44,16 @@ class User(BaseModel):
 
     def is_authenticated(self):
         return True
+
+class Profile(BaseModel):
+    __tablename__ = "profiles"
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    name = db.Column(db.String(255), nullable = False)
+    gender = db.Column(db.String(255), nullable = False)
+    phone_number = db.Column(db.String(255), nullable = False)
+    private_email = db.Column(db.String(255), nullable = False)
+    house_address = db.Column(db.String(255), nullable = True)
+    postal_code = db.Column(db.String(255), nullable = True)
+    town = db.Column(db.String(255), nullable = True)
+    nationality = db.Column(db.String(255), nullable = False)
     
