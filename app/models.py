@@ -9,6 +9,10 @@ class BaseModel(db.Model):
     updated_at = db.Column(db.DateTime, nullable=True)
 
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 class User(BaseModel):
     __tablename__ = "users"
     email = db.Column(db.String(255), nullable=False, unique=True)
