@@ -16,7 +16,6 @@ def login():
 @admin.route('/logout', methods=['GET'])
 def logout():
     logout_user()
-    flash('You have been logged out')
     return redirect(url_for('admin.login'))
 
 @admin.route('/authenticate', methods=['POST'])
@@ -35,4 +34,4 @@ def authenticate():
 @admin.route("/home", methods=['GET'])
 @login_required
 def home():
-    return "home"
+    return render_template("base.html")
