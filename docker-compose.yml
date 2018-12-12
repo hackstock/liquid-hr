@@ -1,0 +1,8 @@
+version: '3'
+services:
+  admin:
+    env_file:
+      - .env
+    build: .
+    ports:
+     - "5000:5000"
