@@ -61,7 +61,7 @@ class Profile(BaseModel):
 class Employee(BaseModel):
     __tablename__ = "employees"
     profile_id = db.Column(db.Integer, db.ForeignKey('profiles.id'))
-    supervisor_id = db.Column(db.Integer, db.ForeignKey('profiles.id'), nullable=True)
+    supervisor_id = db.Column(db.Integer, nullable=True)
     bank_account_number = db.Column(db.String(255), nullable=False, unique=True)
     bank_account_name = db.Column(db.String(255), nullable=False)
     bank_account_branch = db.Column(db.String(255), nullable=False)
@@ -74,7 +74,6 @@ class Employee(BaseModel):
     emergency_contact_email = db.Column(db.String(255), nullable = False)
     emergency_contact_phone = db.Column(db.String(255), nullable = False)
     profile = db.relationship('Profile', backref='employee', uselist=False)
-    supervisor = db.relationship('Profile', backref='subordinates')
 
 
     
