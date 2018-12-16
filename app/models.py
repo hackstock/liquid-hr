@@ -50,10 +50,31 @@ class Profile(BaseModel):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     name = db.Column(db.String(255), nullable = False)
     gender = db.Column(db.String(255), nullable = False)
+    date_of_birth = db.Column(db.String(255), nullable = True)
     phone_number = db.Column(db.String(255), nullable = False)
     private_email = db.Column(db.String(255), nullable = False)
     house_address = db.Column(db.String(255), nullable = True)
     postal_code = db.Column(db.String(255), nullable = True)
     town = db.Column(db.String(255), nullable = True)
     nationality = db.Column(db.String(255), nullable = False)
+
+class Employee(BaseModel):
+    __tablename__ = "employees"
+    profile_id = db.Column(db.Integer, db.ForeignKey('profiles.id'))
+    supervisor_id = db.Column(db.Integer, db.ForeignKey('profiles.id'), nullable=True)
+    bank_account_number = db.Column(db.String(255), nullable=False, unique=True)
+    bank_account_name = db.Column(db.String(255), nullable=False)
+    bank_account_branch = db.Column(db.String(255), nullable=False)
+    social_insurance_number = db.Column(db.String(255), nullable = False)
+    annual_leave_days = db.Column(db.Integer, nullable=True)
+    religion = db.Column(db.String(255), nullable = False)
+    date_of_employment= db.Column(db.String(255), nullable = False)
+    emergency_contact_name = db.Column(db.String(255), nullable = False)
+    emergency_contact_relationship = db.Column(db.String(255), nullable = False)
+    emergency_contact_email = db.Column(db.String(255), nullable = False)
+    emergency_contact_phone = db.Column(db.String(255), nullable = False)
+    profile = db.relationship('Profile', backref='employee', uselist=False)
+    supervisor = db.relationship('Profile', backref='subordinates')
+
+
     
