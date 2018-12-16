@@ -11,6 +11,8 @@
     <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/jqvmap.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/modal.css') }}" rel="stylesheet">
+    
     <!-- Fullcalendar-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.css" rel="stylesheet">
     <!-- Materialize-->
@@ -29,6 +31,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="" class="waves-effect">Dashboard<i class="material-icons">web</i></a></li>
+                                <li><a href="{{ url_for('admin.show_employee_management') }}" class="waves-effect">Employee Management<i class="material-icons">web</i></a></li>
                                 <li><a href="" class="waves-effect">System Users<i class="material-icons">list</i></a></li>
                                 <li><a href="" class="waves-effect">System Settings<i class="material-icons">settings</i></a></li>
                             </ul>
@@ -154,6 +157,7 @@
         <!-- Initialization script -->
         <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
         <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
 
         {% block pagescripts %}
         {% endblock %}

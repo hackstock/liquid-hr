@@ -35,3 +35,9 @@ def authenticate():
 @login_required
 def home():
     return render_template("base.html")
+
+
+@admin.route("/employee-management",methods=['GET'])
+@login_required
+def show_employee_management():
+    return render_template("employee_management.html")

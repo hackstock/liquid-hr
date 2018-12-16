@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <div id="test2" class="row">
+     <a class="btn right" id="addEmployee">Add Employee</a>
+    <div class="col s12">
+      <div class="card">
+        <table id="default-table-example" class="row-border" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Phone Number</th>
+              <th>Supervisor</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="col s12 m4">
+      <span class="settings-title">Personal Information</span>
+    </div>  
+    <form>
+           
+              <div class="input-field">
+                <input id="username" type="text" class="validate">
+                <label for="username">Username</label>
+              </div>
+
+             <div class="input-field">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+
+            <label class="right">
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span>Is Admin</span>
+            </label>
+
+
+      
+     <div class="col s12 m4">
+      <span class="settings-title">Profile Information</span>
+    </div>
+
+    <div class="input-field">
+      <input id="name" type="text" class="validate">
+      <label for="name">Name</label>
+    </div>
+    <div class="input-field">
+      <input id="dob" type="date" class="validate">
+      <label for="dob">Date Of Birth</label>
+    </div>
+    <div>
+      <span>Gender</span>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio" checked />
+        <span>Male</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio" />
+        <span>Female</span>
+      </label>
+    </p>
+    </div>
+    <div class="input-field">
+      <input id="phonenumber" type="tel" class="validate">
+      <label for="phonenumber">Phone Number</label>
+    </div>
+    <div class="input-field">
+      <input id="email" type="email" class="validate">
+      <label for="email">E-mail</label>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input id="address" type="text" class="validate">
+        <label for="address">House Address</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="city" type="text" class="validate">
+        <label for="city">City</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="postcode" type="text" class="validate">
+        <label for="postcode">Post Code</label>
+      </div>
+      <div class="input-field col s4">
+        <input id="nationality" type="text" class="validate">
+        <label for="nationality">Nationality</label>
+      </div>
+    </div>
+    
+    
+    <div class="col s12 m4">
+      <span class="settings-title">Employee Information</span>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="accountnumber" type="text" class="validate">
+        <label for="accountnumber">Account Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="accountname" type="text" class="validate">
+        <label for="accountname">Account Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="branch" type="text" class="validate">
+        <label for="branch">Account Branch</label>
+      </div>
+      
+      <div class="input-field col s6">
+        <input id="socialnumber" type="text" class="validate">
+        <label for="socialnumber">Social Insurance Number</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="leavedays" type="number" class="validate">
+        <label for="leavedays">Annual Leave Days</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="dateofemployment" type="date" class="validate">
+        <label for="dateofemployment">Date Of Employment</label>
+      </div>
+
+      <div class="input-field col s6">
+        <input id="religion" type="text" class="validate">
+        <label for="religion">Religion</label>
+      </div>
+      </div>
+
+      <div class="col s12 m4">
+        <span class="settings-title">Employee Contact Information</span>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="contactname" type="text" class="validate">
+          <label for="contactname">Contact Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="relationship" type="text" class="validate">
+          <label for="relationship">Relationship</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="contactphone" type="text" class="validate">
+          <label for="contactphone">Contact Phone</label>
+        </div>
+        
+      </div>
+      <button class="waves-effect waves-light btn-large">Submit</button>
+    
+  </form>
+    
+  </div>
+
+</div>
+{% endblock %}
+
+{% block pagescripts %}
+
+{% endblock %}
