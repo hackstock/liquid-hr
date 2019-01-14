@@ -963,26 +963,28 @@ var tabLegendCallback = function(chart) {
     var today = todaysDate.toISOString().substr(0,10);
     todaysDate.setDate(todaysDate.getDate() + 1);
     var tomorrow = todaysDate.toISOString().substr(0,10);
+    console.log( tomorrow)
     todaysDate.setDate(todaysDate.getDate() - 3);
     var threeDaysAgo = todaysDate.toISOString().substr(0,10);
     var eventData = [
         {
-          title: 'All Day Event',
-          start: today
+          title: 'George Mills on Leave',
+          start: today,
+          end: todaysDate.setDate(todaysDate.getDate() + 10)
         },
         {
-          title: 'Long Event',
-          start: threeDaysAgo,
-          end: today
+          title: 'Edward Pie on leave',
+          start: today,
+          end:  todaysDate.setDate(todaysDate.getDate() + 7)
         },
         {
           id: 999,
-          title: 'Repeating Event',
+          title: 'Kojo Davis on leave',
           start: today + 'T16:00:00'
         },
         {
           id: 999,
-          title: 'Repeating Event',
+          title: 'Kojo Davis on leave',
           start: today + 'T16:00:00'
         },
         {
