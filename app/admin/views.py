@@ -41,3 +41,10 @@ def home():
 @login_required
 def show_employee_management():
     return render_template("employee_management.html")
+
+
+
+@admin.route("/leave-management",methods=['GET'])
+#@login_required
+def show_leave_management():
+    return render_template("leave_management.html")

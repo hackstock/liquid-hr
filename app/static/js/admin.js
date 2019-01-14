@@ -960,6 +960,7 @@ var tabLegendCallback = function(chart) {
      *     Calendar     *
      ********************/
     var todaysDate = new Date();
+   // alert(todaysDate);
     var today = todaysDate.toISOString().substr(0,10);
     todaysDate.setDate(todaysDate.getDate() + 1);
     var tomorrow = todaysDate.toISOString().substr(0,10);
@@ -967,11 +968,12 @@ var tabLegendCallback = function(chart) {
     var threeDaysAgo = todaysDate.toISOString().substr(0,10);
     var eventData = [
         {
-          title: 'All Day Event',
-          start: today
+          title: 'Edward Pie on leave',
+          start: today,
+          end: '2019-02-01'
         },
         {
-          title: 'Long Event',
+          title: 'George Mill on Leave',
           start: threeDaysAgo,
           end: today
         },
@@ -985,36 +987,7 @@ var tabLegendCallback = function(chart) {
           title: 'Repeating Event',
           start: today + 'T16:00:00'
         },
-        {
-          title: 'Meeting',
-          start: today + 'T10:30:00',
-          end: today + 'T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: today + 'T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: today + 'T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: today + 'T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: today + 'T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: tomorrow + 'T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: today
-        }
+      
       ];
     $('#calendar').fullCalendar({
       header: {
